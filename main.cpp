@@ -156,8 +156,11 @@ vector<vector<int>> read_csv(string filePath, int n) {
 int main()
 {
     for (auto i = 10; i <= 50; i += 10) {
-        Graph g(i, i);
-        vector<vector<int>> data = read_csv("Your absolute path of csv file.", i);
+        Graph g(i, i * i - i);
+        /*
+         * file path: /Users/twlin/NCTU/Courses/Advanced_Algorithms/hw5/src/test.csv
+         * */
+        vector<vector<int>> data = read_csv("/Users/twlin/NCTU/Courses/Advanced_Algorithms/hw5/src/test.csv", i);
         int index = 1, j = 1, k = 2;
         while (index++ < i) {
             g.addEdge(j, k, data[j - 1][k - 1]);
