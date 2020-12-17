@@ -161,18 +161,17 @@ int main()
          * file path: /Users/twlin/NCTU/Courses/Advanced_Algorithms/hw5/src/test.csv
          * */
         vector<vector<int>> data = read_csv("/Users/twlin/NCTU/Courses/Advanced_Algorithms/hw5/src/test.csv", i);
-        int index = 1, j = 1, k = 2;
-        while (index++ < i) {
-            g.addEdge(j, k, data[j - 1][k - 1]);
-            g.addEdge(k, j, data[k - 1][j - 1]);
-            j++;
-            k++;
-        }
+
+        for (auto i = 0; i < data.size(); i++)
+            for (auto j = 0; j < data[i].size(); j++)
+                g.addEdge(i + 1, j + 1, data[i][j]);
+
         cout << "when # of nodes are " << i << ", Edges of MST are \n";
         int mst_wt = g.kruskalMST();
         cout << "Weight of MST is " << mst_wt << endl;
         cout << "\n===========================\n" << endl;
     }
+
 
     return 0;
 }
