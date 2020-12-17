@@ -157,10 +157,7 @@ int main()
 {
     for (auto i = 10; i <= 50; i += 10) {
         Graph g(i, i * i - i);
-        /*
-         * file path: /Users/twlin/NCTU/Courses/Advanced_Algorithms/hw5/src/test.csv
-         * */
-        vector<vector<int>> data = read_csv("/Users/twlin/NCTU/Courses/Advanced_Algorithms/hw5/src/test.csv", i);
+        vector<vector<int>> data = read_csv("/ Home / Absolute Path / FILE.csv", i);
 
         for (auto i = 0; i < data.size(); i++)
             for (auto j = 0; j < data[i].size(); j++)
